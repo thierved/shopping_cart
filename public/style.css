@@ -27,8 +27,13 @@ body, html, h2, h3, p, ul, li {
 }
 
 .header {
+    position: fixed;
+    background-color: #4abdac;
+    width: 100%;
     height: 120px;
     color: var(--text-color);
+    top: 0;
+    box-shadow: 2px 0 5px rgb(122, 122, 122);
 }
 
 h2, h3 {
@@ -83,7 +88,8 @@ form button:hover {
 .store-container {
     display: flex;
     justify-content: space-evenly;
-    margin-top: 10px;
+    margin-top: 120px;
+    padding-top: 20px;
     min-height: 550px;
 }
 
@@ -95,24 +101,57 @@ form button:hover {
     width: 23%;
 }
 
-.items, .shipped-items {
+.shipped-items {
     background: rgba(255, 254, 254, 0.24);
 }
 
 .items-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .items-container .item {
-    width: 30%;
+    width: 23%;
     margin: 10px 0;
-    background: rgba(255, 255, 255, 0.856);
+}
+
+.item {
+    padding: 5px;
+    background-color: azure;
+    border-radius: 5px;
 }
 
 img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+}
+
+.item .item-detail {
+    text-align: center;
+}
+
+.item .item-detail h4 {
+    margin: 0;
+    padding: 5px 0;
+    font-weight: normal;
+    color: #297267ce;
+    font-style: italic;
+    font-size: 1.05rem;
+}
+
+.item .item-detail button {
+    width: 80%;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    background: var(--button-color);
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+    border-radius: 48rem;
+    font-size: 1.2rem;
+}
+
+.item .item-detail button:focus {
+    outline: none;
 }

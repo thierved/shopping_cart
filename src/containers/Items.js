@@ -17,7 +17,6 @@ class Products extends Component {
     render() {
         return (
             <div className="items">
-                <h3>Products</h3>
                 <div className="items-container">
                     {this.renderItems(this.props.items)}
                 </div>
