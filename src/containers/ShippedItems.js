@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class ShippedItems extends Component {
     render() {
@@ -10,4 +11,10 @@ class ShippedItems extends Component {
     }
 }
 
-export default ShippedItems;
+const mapStateToProps = (state) => {
+    return {
+        shipItem : state
+    }
+}
+
+export default connect()(ShippedItems);
