@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux';
 
-import { allItems } from './Reducer_Items';
-import { shipItem } from './Reducer_shoppedItems';
+import searchItem from './reducer_all_items';
 
 export default combineReducers({
-        items: allItems,
-        shipItem
+        allItems: searchItem
 });
 

@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+import { searchItem } from '../actions';
 
 class Header extends Component {
     constructor(props) {
@@ -13,8 +17,7 @@ class Header extends Component {
 
     submitForm(event) {
         event.preventDefault();
-        console.log(this.state.keyword);
-        
+        searchItem(this.state.keyword);                
     }
 
 
@@ -33,4 +36,8 @@ class Header extends Component {
     }
 }
 
-export default Header;
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators({ searchItem }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(Header);

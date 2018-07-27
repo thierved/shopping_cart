@@ -3,11 +3,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import Item from '../components/Item';
-import {shipItem} from '../actions';
 
 class Products extends Component {
     
-    renderItems({items}) {
+    renderItems(items) {
         console.log(this.props);
         
         if (items) {
@@ -17,7 +16,7 @@ class Products extends Component {
                           name={item.name}
                           src={item.image}
                           price={item.price} 
-                          callback={shipItem(item.id)}/>
+                    />
                 );
             });
         }        
@@ -35,14 +34,13 @@ class Products extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
-        items : state
+        items : state.allItems
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({shipItem}, dispatch);
+    return bindActionCreators({}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);
