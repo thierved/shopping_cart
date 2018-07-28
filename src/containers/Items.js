@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import Item from '../components/Item';
+import {addProductToBag} from '../actions';
 
 class Products extends Component {
     
@@ -16,6 +17,7 @@ class Products extends Component {
                           name={item.name}
                           src={item.image}
                           price={item.price} 
+                          action={addProductToBag(item.id)}
                     />
                 );
             });
@@ -35,12 +37,12 @@ class Products extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        items : state.allItems
+        items : state.items
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({}, dispatch);
+    return bindActionCreators({addProductToBag}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);
